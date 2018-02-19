@@ -1,6 +1,6 @@
 
 
-d3.csv("/data/UT_asu_exampleData.csv", function(err, data){
+d3.csv("data/UT_asu_exampleData.csv", function(err, data){
     let census = {}
     data.forEach(function(d){
         census[d.geoid] = d
@@ -8,11 +8,11 @@ d3.csv("/data/UT_asu_exampleData.csv", function(err, data){
 
     
 
-    let file = "/data/tl_2016_49_tract.json"
+    let file = "data/tl_2016_49_tract.json"
 
-    d3.json("/data/utah_counties.json", function (error, map) {
+    d3.json("data/utah_counties.json", function (error, map) {
 
-        d3.csv("/data/neighbors.csv", function(error, neighbors) {
+        d3.csv("data/neighbors.csv", function(error, neighbors) {
             console.log(neighbors)
 
             let nmap = {}
