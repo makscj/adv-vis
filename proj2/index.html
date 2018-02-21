@@ -7,6 +7,7 @@
         
         <script type="application/javascript" src="js/script.js"></script>
         <script type="application/javascript" src="js/map.js"></script>
+        <script type="application/javascript" src="js/search.js"></script>
 
         <style>
             .counties {
@@ -37,10 +38,17 @@
                 <g id="map"> </g>
             </svg>
         </div>
-        <div id="info-box" style="float:left;">
-            <p id="county-name"></p>
-            <p>Selection Population <span id="population"></span></p>
-            <p>Selection Unemployment Rate <span id="rate"></span></p>
+        <div id="info-box" style="float:left;padding-left:3em;">
+            <button onclick="findSolution()">Find Solution</button>
+            <button onclick="clearMap()">Clear Map</button>
+            <button onclick="initialTractSeeds()">Initial Seeds</button>
+            <div><a href="about.html"><h3>README</h3></a></div>initialTractSeeds
+            <p>Total Population <span id="population"></span></p>
+            <p>Unemployment Rates:</p>
+            <div id="rates">
+                <ul></ul>
+            </div>
+            
         </div>
     </body>
 
