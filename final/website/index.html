@@ -1,0 +1,45 @@
+<html>
+    <head>
+            <script src="https://d3js.org/d3.v4.js"></script>
+            <script src="scripts/load.js"></script>
+            <script src="scripts/map.js"></script>
+            <script src="scripts/words.js"></script>
+            <script src="scripts/scatter.js"></script>
+            <script src="scripts/rubics.js"></script>
+
+            <style>
+                div {
+                    float: left;
+                }
+            </style>
+    </head>
+    <body>
+        <div id="word-map">
+            <svg style="border-style: solid;">
+            </svg>
+        </div>
+        <div id="rubics">
+                <svg style="border-style: solid;">
+                    <g class="cell">
+
+                    </g>
+                </svg>
+        </div>
+        <!-- <div id="info-panel">
+            <p id="hover"></p>
+        </div> -->
+        <div id="word-entry">
+            <!-- <span>Enter a word: </span><input type="text" id="search-word" name="search-word" onkeyup="searchWord()"> -->
+            
+                <input id="wordsearch" list="words-list" name="words-list">
+                <datalist id="words-list">
+                    
+                </datalist>
+                <button onclick="searchWord()">Search</button>
+        </div>
+        <div id="scatter-matrix">
+                <svg style="border-style: solid;">
+                </svg>
+            </div>
+    </body>
+</html>
