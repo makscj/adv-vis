@@ -19,6 +19,22 @@
 \maketitle
 
 
+\section{Current Site}
+
+The current website can be found at 
+
+\url{https://makscj.github.io/adv-vis/final/website/}
+
+There are four interesting components to interact with, from left to right:
+
+\begin{itemize}
+\item T-SNE embedding of GloVe vectors, with interaction possible with each word. Clicking on a word adds it to a collection of "selected" words for futher investigation. Any selected words will be highlighted in the the 2-dimensional plot discussed next. This svg can also be zoomed/panned for easier exploration. 
+\item A 2-dimensional visualization of a pair-wise plane in the original 50-dimenisonal GloVe vector space for the words. This has a joint interaction with the "rubix" controller discussed futher below.
+\item A search box that allows the user to search the T-SNE space for a specific word, dimming all points except for the result, and flashing the result point 5 times in red. 
+\item As mentioned above, the "rubix" controller which represents the cartesian product of all of the dimensions in the original GloVe space. Changing the selected square will update the 2-dimensional plot mentioned above. Each square can be clicked on to show a different slice of the original space. This can also be controller with arrow keys for easier interaction.
+\end{itemize}
+
+
 \section{Project Summary}
 
 \begin{enumerate}
@@ -58,10 +74,16 @@
 \item \sout{Week 3 (March 19) - try out different HD visulizations}
 \item Week 4 (March 26) - try out different HD visulizations
 \item Week 5 (April 2) - try out different HD visulizations / try out TOPO visualizations
-\item Week 6 (April 9) - make website / \sout{d3 visualizations}
+\item \sout{Week 6 (April 9) - make website / d3 visualizations}
 \item Week 7 (April 16) - make website / d3 visualizations
 \item Week 8 (April 23) - finish website / prepare presentation, report
 \end{itemize}
+
+\subsection{Timeline Status}
+
+I have made some D3 visualizations earlier than originally planned because of some of the fruitless outcomes of trying some HD visualizations. I appear to be on track, and I just need to continue exploring the HD visualizations we discussed in class to see what other insights I can provide to the data. 
+
+This task has been more challenging than I thought, because I haven't been able to find a mapping of the T-SNE data using keppler mapper, and because the original dataset has 50 dimensions it is harder to visualize these using parallel coordinates or a scatter-matrix. 
 
 
 \end{document}
