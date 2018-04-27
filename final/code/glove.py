@@ -5,7 +5,7 @@ stopwords = {"'s","''","``","n't", "--","ourselves", "hers", "between", "yoursel
 
 
 def is_ascii(s):
-    return all(ord(c) < 128 for c in s)
+    return all(ord(c) < 128 and not c.isdigit() and not c in string.punctuation for c in s)
 
 
 def loadGloveModel(gloveFile):

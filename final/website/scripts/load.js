@@ -9,7 +9,8 @@ STATE = {
         },
         COLOR: {
             DEFAULT: "black",
-            SELECTED: "red"
+            SELECTED: "red",
+            NEIGHBOR: "blue"
         }
     },
     SCATTER: {
@@ -23,7 +24,8 @@ STATE = {
     },
     SELECTED: {
         NODES: [],
-        SCATTER: {x:1, y:1}
+        SCATTER: {x:1, y:1},
+        NEIGHBORS: []
     }
 }
 
@@ -53,7 +55,7 @@ d3.text("data/words5000.csv", function(text_words) {
 
             data = data.slice(0,2000)
             
-            drawMap(data)
+            drawMap(data, undefined)
             drawScatter(data)
             drawRubics(data, {x: 1, y: 2})
             setWords(words)

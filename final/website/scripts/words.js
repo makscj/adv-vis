@@ -34,7 +34,7 @@ function repeatFlash(found, counter){
             return
     }
     counter += 1
-    
+    console.log("FLASH")
     found.transition()
         .duration(750)
         .style("fill", x => counter % 2 == 0 ? getNodeColor(x) : STATE.NODE.COLOR.SELECTED)

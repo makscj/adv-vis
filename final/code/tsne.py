@@ -42,6 +42,25 @@ def projectWordsNoFile(vectors, keys, destination, n_components, perplexity, n_v
         np.savetxt(destination + "tsne-vectors" + "-nc" + str(n_components) + "-p" + str(perplexity) + "-c" + str(n_vectors) + ".csv", projected_data, delimiter=',')
     return subsetKeys, projected_data    
 
+def projectWordsNoFileDoubleProject(vectors, keys, destination, n_components, perplexity, n_vectors, writeVectors, n_components_2nd):
+    mapper = km.KeplerMapper(verbose=2)
+    np.savetxt(destination + "word-vectors" + "-c" + str(n_vectors) + ".csv", vectors[0:n_vectors], delimiter=',')
+    subset = np.array(vectors[0:n_vectors])
+    subsetKeys = keys[0:n_vectors]
+    if writeVectors:
+        thefile = open(destination + 'words' + str(n_vectors) + ".csv", 'w')
+        for item in subsetKeys:
+            thefile.write("%s\n" % item)
+    print "projecting"
+    projected_data = mapper.fit_transform(subset,
+                                      projection=sklearn.manifold.TSNE(n_components=n_components, perplexity=perplexity))
+
+    projected_data2 = mapper.fit_transform(subset, projection=sklearn.manifold.TSNE(n_components=n_components_2nd, perplexity=perplexity))
+    if writeVectors:
+        print "saving vectors"
+        np.savetxt(destination + "tsne-vectors" + "-nc" + str(n_components) + "-p" + str(perplexity) + "-c" + str(n_vectors) + ".csv", projected_data, delimiter=',')
+        np.savetxt(destination + "tsne-vectors" + "-nc" + str(n_components_2nd) + "-p" + str(perplexity) + "-c" + str(n_vectors) + ".csv", projected_data2, delimiter=',')
+    return subsetKeys, projected_data    
 
 
 # keys,vectors = projectWords("../data/glove.txt", "../website/data/", 2, 40.0, 5000, True)
